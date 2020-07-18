@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.android.navigation.R
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
 class TitleFragment : Fragment() {
@@ -20,12 +21,7 @@ class TitleFragment : Fragment() {
         binding.playButton.setOnClickListener {
             //Navigate to GameFragment
             view: View ->
-            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
-        }
-
-        binding.rulesButton.setOnClickListener {
-            view: View ->
-            view.findNavController().navigate(R.id.action_titleFragment_to_rulesFragment)
+            view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         }
 
         setHasOptionsMenu(true)

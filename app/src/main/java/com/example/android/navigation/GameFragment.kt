@@ -100,17 +100,20 @@ class GameFragment : Fragment() {
                         binding.invalidateAll()
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
+                        //actionGameFragmentToGameWonFragment() method is from the GameFragmentDirections class.
+                        //We pass the data we want to share with another Fragment in this method.
+                        // Arguments passed are the total Number of questions attempted and the number of right answers
                         view.findNavController()
-                                .navigate(R.id.action_gameFragment_to_gameWonFragment)
+                                .navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
+                    //actionGameFragmentToGameOverFragment() method is from the GameFragmentDirections class.
                     view.findNavController()
-                            .navigate(R.id.action_gameFragment_to_gameOverFragment)
+                            .navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
             }
         }
-
         return binding.root
     }
 
