@@ -43,7 +43,7 @@ class GameWonFragment : Fragment() {
         val args = GameWonFragmentArgs.fromBundle(arguments!!)
         Toast.makeText(context, "NumCorrect: ${args.numCorrect}, NumOfQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show()
 
-        setHasOptionsMenu(true)
+        setHasOptionsMenu(true)//Adds the menu to the GameWonFragment
         return binding.root
     }
     //Creating the share intent
